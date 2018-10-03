@@ -4,6 +4,12 @@
 \newcommand\aastex{AAS\TeX}
 \newcommand\latex{La\TeX}
 
+\newcommand{\project}[1]{\textsl{#1}}
+\newcommand{\JWST}{\project{JWST}}
+\newcommand{\HST}{\project{HST}}
+\newcommand{\Spitzer}{\project{Spitzer}}
+\newcommand{\Kepler}{\project{Kepler}}
+
 \submitjournal{AJ}
 
 \shorttitle{Molecular Dissociation in Ultra-Hot Jupiter WASP-33b}
@@ -28,7 +34,16 @@ Ultra hot planets.
 
 WASP-33b.
 
+\section{Observations} \label{sec:observations}
+We observed WASP-33b with the Wide Field Camera 3 (WFC3) instrument on \HST\ for GO Program 15109 (PI: L. Kreidberg). The observations were obtained over five consecutive orbits of the telescope. We began each orbit with a direct image of the star with the F139M filter (used as a zero-point for wavelength calibration). Subsequent exposures used the G102 grism to obtain time-series spectra over the wavelength range $0.8 - 1.1\,\mu$m. For the spectroscopy, we used ``round-trip" spatial scanning mode, which scans the telescope in the spatial direction back and forth across the detector. This mode enables long exposures for bright targets that quickly saturate in traditional staring mode \citep[compare][]{berta12, kreidberg14a}.  The G102 exposures used the \texttt{SPARS10} readout pattern with \texttt{NSAMP} $= 9$ (for a total exposure time of 83 s). The scan rate was 0.343 arcsec/sec scan rate. This setup yielded a scan height of 170 pixels and maximum per pixel counts to below 30k electrons. 
 
+\section{Data Reduction and Analysis} \label{sec:reduction}
+
+\subsection{Comparison with \cite{haynes15}}
+We also reanalyzed 
+
+
+\subsection{Companion Star}
 
 
 \bibliographystyle{aasjournal}
