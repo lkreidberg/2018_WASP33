@@ -6,6 +6,12 @@
 \providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
 \providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
 
+\bibitem[{{Arcangeli} {et~al.}(2018){Arcangeli}, {Desert}, {Line}, {Bean},
+  {Parmentier}, {Stevenson}, {Kreidberg}, {Fortney}, {Mansfield}, \&
+  {Showman}}]{arcangeli18}
+{Arcangeli}, J., {Desert}, J.-M., {Line}, M.~R., {et~al.} 2018, ArXiv e-prints.
+\newblock \doarXiv{1801.02489}
+
 \bibitem[{{Berta} {et~al.}(2012){Berta}, {Charbonneau}, {D{\'e}sert},
   {Miller-Ricci Kempton}, {McCullough}, {Burke}, {Fortney}, {Irwin}, {Nutzman},
   \& {Homeier}}]{berta12}
@@ -27,6 +33,16 @@
   {Homeier}}]{kreidberg14a}
 {Kreidberg}, L., {Bean}, J.~L., {D{\'e}sert}, J.-M., {et~al.} 2014, \nat, 505,
   69, \dodoi{10.1038/nature12888}
+
+\bibitem[{{Mansfield} {et~al.}(\noop{3001}submitted){Mansfield}, {Bean},
+  {Line}, {Paramentier}, \& {Kreidberg}}]{mansfield18}
+{Mansfield}, M., {Bean}, J.~B., {Line}, M., {Paramentier}, V., \& {Kreidberg},
+  L. \noop{3001}submitted, Submitted to \apj
+
+\bibitem[{{Parmentier} {et~al.}(\noop{3001}submitted){Parmentier}, {Line},
+  {Bean}, {Fortney}, {D\'{e}sert}, \& {Kreidberg}}]{parmentier18}
+{Parmentier}, V., {Line}, M.~R., {Bean}, J., {et~al.} \noop{3001}submitted,
+  Submitted to A\&A
 
 \bibitem[{{Zhang} \& {Showman}(2017)}]{zhang17}
 {Zhang}, X., \& {Showman}, A.~P. 2017, \apj, 836, 73,
