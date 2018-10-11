@@ -39,8 +39,24 @@ We observed WASP-33b with the Wide Field Camera 3 (WFC3) instrument on \HST\ for
 
 \section{Data Reduction and Analysis} \label{sec:reduction}
 
+\subsection{Gaussian Process Model for Stellar Oscillations}
+Previous analysis of Spitzer phase curves for WASP-33b successfully used a Gaussian process (GP) to model the stellar oscillations \citep{zhang17}. We explored using the same model as \cite{zhang17}, implemented with the \texttt{celerite} package \citep{foremanmackey17}. Briefly, the model has the same power spectrum as a damped simple harmonic oscillator, and a jitter term is added to the diagonal of the covariance matrix to model the photon noise.  We tested this model on the G102 broadband light curve, and found that it significantly improved the fit quality. By replacing the sinusoid model for the stellar oscillations with a GP, we improved the best fit rms to 53 ppm from FIXME ppm.
+
+The improvement to the fit quality was encouraging; however, we found that the GP was so flexible that it could entirely replace the secondary eclipse model. To illustrate, Figure~\ref{fig:GP} shows the best fit for two cases: one that includes a secondary eclipse in addition to the GP and instrument systematics model, and another with the GP and instrument systematics alone. Both cases have identical residuals (53 ppm rms), indicating that the GP can entirely replace the secondary eclipse model. This finding was confirmed from an MCMC fit to the light curve, which yielded an eclipse depth of $796 \pm 357$ ppm (consistent with zero).  We therefore concluded that GPs are not the best model for this data set, and that more data points and/or better time sampling are needed to precisely determine the morphology of the stellar oscillations.
+
+\begin{figure*}
+\includegraphics[width = 0.5 \textwidth]{figures/eclipse.pdf}
+\includegraphics[width = 0.5 \textwidth]{figures/no_eclipse.pdf}
+\caption{Top: best fit, broadband G102 light curves (points) for a model that includes an eclipse (left), versus no eclipse (right). The data are normalized (i.e., the light curves are divided by the models for instrument systematics and stellar oscillations). Bottom: residuals to the best fit models. The residuals are nearly identical for the two cases, indicating that the GP is flexible enough to entirely replace the secondary eclipse model for this data set.} 
+\label{fig:GP}
+\end{figure*}
+
 \subsection{Comparison with \cite{haynes15}}
 We also reanalyzed 
+
+Our analysis differs from \cite{haynes15} in two principle ways. One is that we use different orbital parameters for the system. \cite{haynes15} do not report their eclipse times; however, by inspection of their best fit light curve (Figure FIXME), ingress begins earlier/later. We use the precise orbital parameters from \cite{zhang17}.
+
+Another key difference from \cite{haynes15} is that we do not assume the instrument systematics are constant with wavelength. WFC3 systematic trends are known to depend on the count rate \cite{zhou17}, so we allowed the systematics parameters to vary in each spectroscopic light curve fit.  Figure FIXME shows the params.
 
 
 \subsection{Companion Star}
