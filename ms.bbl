@@ -18,6 +18,13 @@
 {Berta}, Z.~K., {Charbonneau}, D., {D{\'e}sert}, J.-M., {et~al.} 2012, \apj,
   747, 35, \dodoi{10.1088/0004-637X/747/1/35}
 
+\bibitem[{{Collier Cameron} {et~al.}(2010){Collier Cameron}, {Guenther},
+  {Smalley}, {McDonald}, {Hebb}, {Andersen}, {Augusteijn}, {Barros}, {Brown},
+  {Cochran}, {Endl}, {Fossey}, {Hartmann}, {Maxted}, {Pollacco}, {Skillen},
+  {Telting}, {Waldmann}, \& {West}}]{cameron10}
+{Collier Cameron}, A., {Guenther}, E., {Smalley}, B., {et~al.} 2010, \mnras,
+  407, 507, \dodoi{10.1111/j.1365-2966.2010.16922.x}
+
 \bibitem[{{Foreman-Mackey} {et~al.}(2017){Foreman-Mackey}, {Agol},
   {Ambikasaran}, \& {Angus}}]{foremanmackey17}
 {Foreman-Mackey}, D., {Agol}, E., {Ambikasaran}, S., \& {Angus}, R. 2017, \aj,
@@ -34,15 +41,29 @@
 {Kreidberg}, L., {Bean}, J.~L., {D{\'e}sert}, J.-M., {et~al.} 2014, \nat, 505,
   69, \dodoi{10.1038/nature12888}
 
-\bibitem[{{Mansfield} {et~al.}(\noop{3001}submitted){Mansfield}, {Bean},
-  {Line}, {Paramentier}, \& {Kreidberg}}]{mansfield18}
-{Mansfield}, M., {Bean}, J.~B., {Line}, M., {Paramentier}, V., \& {Kreidberg},
-  L. \noop{3001}submitted, Submitted to \apj
+\bibitem[{{Kreidberg} {et~al.}(2018){Kreidberg}, {Line}, {Parmentier},
+  {Stevenson}, {Louden}, {Bonnefoy}, {Faherty}, {Henry}, {Williamson},
+  {Stassun}, {Beatty}, {Bean}, {Fortney}, {Showman}, {D{\'e}sert}, \&
+  {Arcangeli}}]{kreidberg18b}
+{Kreidberg}, L., {Line}, M.~R., {Parmentier}, V., {et~al.} 2018, \aj, 156, 17,
+  \dodoi{10.3847/1538-3881/aac3df}
 
-\bibitem[{{Parmentier} {et~al.}(\noop{3001}submitted){Parmentier}, {Line},
-  {Bean}, {Fortney}, {D\'{e}sert}, \& {Kreidberg}}]{parmentier18}
-{Parmentier}, V., {Line}, M.~R., {Bean}, J., {et~al.} \noop{3001}submitted,
-  Submitted to A\&A
+\bibitem[{{Lothringer} {et~al.}(2018){Lothringer}, {Barman}, \&
+  {Koskinen}}]{lothringer18}
+{Lothringer}, J.~D., {Barman}, T., \& {Koskinen}, T. 2018, ArXiv e-prints.
+\newblock \doarXiv{1805.00038}
+
+\bibitem[{{Mansfield} {et~al.}(2018){Mansfield}, {Bean}, {Line}, {Parmentier},
+  {Kreidberg}, {D{\'e}sert}, {Fortney}, {Stevenson}, {Arcangeli}, \&
+  {Dragomir}}]{mansfield18}
+{Mansfield}, M., {Bean}, J.~L., {Line}, M.~R., {et~al.} 2018, \aj, 156, 10,
+  \dodoi{10.3847/1538-3881/aac497}
+
+\bibitem[{{Parmentier} {et~al.}(2018){Parmentier}, {Line}, {Bean}, {Mansfield},
+  {Kreidberg}, {Lupu}, {Visscher}, {D{\'e}sert}, {Fortney}, {Deleuil},
+  {Arcangeli}, {Showman}, \& {Marley}}]{parmentier18}
+{Parmentier}, V., {Line}, M.~R., {Bean}, J.~L., {et~al.} 2018, \aap, 617, A110,
+  \dodoi{10.1051/0004-6361/201833059}
 
 \bibitem[{{Zhang} \& {Showman}(2017)}]{zhang17}
 {Zhang}, X., \& {Showman}, A.~P. 2017, \apj, 836, 73,

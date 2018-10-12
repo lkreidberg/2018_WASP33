@@ -7,72 +7,46 @@ Repeated entry---line 3650 of file ms.bib.bib
  : @article{zhou17
  :                ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "lothringer18"
-Warning--I didn't find a database entry for "kreidberg18b"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3373 of file aasjournal.bst
-Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3373 of file aasjournal.bst
-Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3373 of file aasjournal.bst
-Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
-while executing---line 3373 of file aasjournal.bst
-Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
-while executing---line 3561 of file aasjournal.bst
-Name 2 in "{Mansfield}, M. and {Bean}, J.~B., and {Line}, M. and {Paramentier}, V. and {Kreidberg}, L." has a comma at the end for entry mansfield18
-while executing---line 3561 of file aasjournal.bst
-Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3561 of file aasjournal.bst
-Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3561 of file aasjournal.bst
-Name 5 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3561 of file aasjournal.bst
-Name 2 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3561 of file aasjournal.bst
-Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3561 of file aasjournal.bst
-Name 4 in "{Parmentier}, V. and {Line}, M.~R., and {Bean}, J.B. and {Fortney}, J.J., and {D\'{e}sert}, J.M., and {Kreidberg}, L." has a comma at the end for entry parmentier18
-while executing---line 3561 of file aasjournal.bst
-You've used 9 entries,
+You've used 12 entries,
             3166 wiz_defined-function locations,
-            716 strings with 7021 characters,
-and the built_in function-call counts, 4330 in all, are:
-= -- 347
-> -- 379
+            739 strings with 8532 characters,
+and the built_in function-call counts, 6000 in all, are:
+= -- 448
+> -- 557
 < -- 1
-+ -- 127
-- -- 145
-* -- 404
-:= -- 824
-add.period$ -- 10
-call.type$ -- 9
-change.case$ -- 56
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 150
-empty$ -- 225
-format.name$ -- 150
-if$ -- 840
++ -- 182
+- -- 204
+* -- 594
+:= -- 1153
+add.period$ -- 14
+call.type$ -- 12
+change.case$ -- 61
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 202
+empty$ -- 313
+format.name$ -- 215
+if$ -- 1168
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 9
-newline$ -- 37
-num.names$ -- 36
-pop$ -- 65
+missing$ -- 12
+newline$ -- 47
+num.names$ -- 48
+pop$ -- 67
 preamble$ -- 2
-purify$ -- 56
+purify$ -- 61
 quote$ -- 0
-skip$ -- 111
+skip$ -- 155
 stack$ -- 0
-substring$ -- 114
+substring$ -- 172
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 81
+type$ -- 108
 warning$ -- 0
-while$ -- 30
+while$ -- 39
 width$ -- 0
-write$ -- 103
-(There were 13 error messages)
+write$ -- 140
+(There was 1 error message)
