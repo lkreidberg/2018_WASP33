@@ -1,13 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from astropy.convolution import convolve, Gaussian1DKernel
-import seaborn as sns
+#import seaborn as sns
 import scipy.stats as st
 from astropy.convolution import Gaussian1DKernel, convolve
 
-sns.set_context("talk", font_scale=1.5)
-sns.set_style("white")
-sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
+#sns.set_context("talk", font_scale=1.5)
+#sns.set_style("white")
+#sns.set_style("ticks", {"xtick.direction":"in", "ytick.direction":"in"})
 
 h = 6.626e-34   #J/s
 c = 3.0e8       #m/s
@@ -88,7 +88,7 @@ labels  = ["best fit model", "best fit with no TiO"]
 colors = ['blue', 'red']
 linestyles = ['dotted', 'dashed']
 
-plt.figure(figsize = (12,6))
+plt.figure(figsize = (8,4))
 
 """for i, f in enumerate(files):
 	d = np.genfromtxt(f, skip_header = 2)
@@ -118,9 +118,9 @@ off2best = 70.e-6
 
 
 d = np.genfromtxt("SE-W33b-TiO-NoDrag-AllK-RpoRs-0.1055.dat", skip_header = 1, delimiter = ',')
-plt.plot(d[:,1], d[:,2]*0.95316816783, label = 'GCM', color = '0.1')       #multiplied by correction factor for rp/rs (Vivien assuemd 0.1055)
+plt.plot(d[:,1], d[:,2]*0.95316816783, label = 'Vivien GCM', color = '0.5', linestyle = 'dotted')       #multiplied by correction factor for rp/rs (Vivien assuemd 0.1055)
 
-plt.ylim(0.0, 1.8e-3)
+plt.ylim(0.0, 2.0e-3)
 plt.xlim(0.75, 1.7)
 
 
@@ -131,8 +131,8 @@ plt.xlim(0.75, 1.7)
 g = Gaussian1DKernel(stddev=50)
 offset = 0.0000
 
-d = np.genfromtxt("wasp33b_rfacv1.0_m0.0_co1.0nc.flx")
-plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "forward model, rfacv1.0_m0.0")
+d = np.genfromtxt("wasp33b_from_Caroline/wasp33b_rfacv1.0_m0.0_co1.0nc.flx")
+plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "Caroline forward model")#, rfacv1.0_m0.0")
 
 #d = np.genfromtxt("wasp33b_rfacv0.85_m0.0_co1.0nc.flx")
 #plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "forward model, rfacv0.85_m0.0")
@@ -144,10 +144,82 @@ plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "for
 #plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset,  label = "forward model, no TiO")
 
 
-plt.tight_layout()
+######### Josh Lothringer models
+#d= np.genfromtxt("wasp33b_from_Josh/wasp33_self_consistent.csv", delimiter = ',') #Angstroms, log10(erg/s/cm2/cm)
+#d= np.genfromtxt("wasp33b_from_Josh/WASP33b.h2o=1.0e-04.co=1.0e-03.INV3.7.spec.txt", delimiter = ',') #Angstroms, log10(erg/s/cm2/cm)
+d= np.genfromtxt("wasp33b_from_Josh/WASP33b.h2o=1.0e-04.co=1.0e-03.tio=3.0e-06.INV3.7.spec.txt", delimiter = ',') #Angstroms, log10(erg/s/cm2/cm)
+#0.0004 at 1 micron
+d[:,0] /= 1.e4        #convert wavelength to microns
+d[:,1] = 10.**(d[:,1])  #convert to ergs/s/cm2/cm 
+#plt.plot(d[:,0], d[:,1])     
+wp = d[:,0]
+fp = d[:,1]
+    
+
+#star: wavelength (microns); flux at 1 AU, in W/m2/micron ; flux at stellar surface in erg/cm2/sec/Hz 
+star = np.genfromtxt("W33b_star_NEXTGEN_B.dat")       #W/m2/micron (column 1)
+#0.0002 micron at 1 micron
+
+#plt.plot(star[:,0], star[:,1]*2.998e10)
+ws = star[:,0]
+fs = star[:,1]*2.998e10
+
+fp = np.interp(ws, wp, fp)
+
+fpfs = fp/fs*(0.103)**2/np.pi/ws
+
+g = Gaussian1DKernel(stddev=100)
+plt.plot(ws, convolve(fpfs, g, boundary = 'extend'), color = 'orange', label = "Josh TiO")
+
+d= np.genfromtxt("wasp33b_from_Josh/WASP33b.h2o=1.0e-04.co=1.0e-03.INV3.7.spec.txt", delimiter = ',') #Angstroms, log10(erg/s/cm2/cm)
+#0.0004 at 1 micron
+d[:,0] /= 1.e4        #convert wavelength to microns
+d[:,1] = 10.**(d[:,1])  #convert to ergs/s/cm2/cm 
+#plt.plot(d[:,0], d[:,1])     
+wp = d[:,0]
+fp = d[:,1]
+    
+
+#star: wavelength (microns); flux at 1 AU, in W/m2/micron ; flux at stellar surface in erg/cm2/sec/Hz 
+star = np.genfromtxt("W33b_star_NEXTGEN_B.dat")       #W/m2/micron (column 1)
+#0.0002 micron at 1 micron
+
+#plt.plot(star[:,0], star[:,1]*2.998e10)
+ws = star[:,0]
+fs = star[:,1]*2.998e10
+
+fp = np.interp(ws, wp, fp)
+
+fpfs = fp/fs*(0.103)**2/np.pi/ws
+
+g = Gaussian1DKernel(stddev=100)
+plt.plot(ws, convolve(fpfs, g, boundary = 'extend'), color = 'cyan', label = "Josh no TiO")
+
+
+#data
+s = np.genfromtxt("w33_g141_espec_083118.txt")
+d = np.genfromtxt("w33_g102_espec_083118.txt")
+
+x = np.append(d[:,0], s[:,0])
+y = np.append(d[:,1], s[:,1])
+err = np.append(d[:,2], s[:,2])
+
+rprs = 0.103
+
+off1best = -150.e-6
+off2best = 70.e-6
+
+plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100, label = "G102 data")
+plt.errorbar(s[:,0], s[:,1] - off2best, s[:,2], fmt = 'xk', zorder=100, label="G141 data (Kreidberg)")
+
+#plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100)#, label = "G102 data")
+
+
+
 plt.xlabel("Wavelength (microns)")
 plt.ylabel("Planet-to-star flux")
-plt.legend(loc = "upper left", frameon=True, fontsize=14)
+plt.legend(loc = "lower right", frameon=True, fontsize=10)
 
+plt.tight_layout()
 plt.savefig("model_comparison.pdf")
 #plt.show() 
