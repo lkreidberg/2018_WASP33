@@ -97,7 +97,7 @@ plt.figure(figsize = (8,4))
 s = np.genfromtxt("w33_data_haynes.txt")
 #plt.errorbar(s[:,0], s[:,1]/100., s[:,2]/100., fmt = 'ow', markersize = 4, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1., linewidth = 1., linestyle='none', zorder=100, label="G141 data (Haynes)")
 
-s = np.genfromtxt("w33_g141_espec_083118.txt")
+s = np.genfromtxt("w33_g141_espec_091018.txt")
 d = np.genfromtxt("w33_g102_espec_083118.txt")
 
 
@@ -197,8 +197,8 @@ plt.plot(ws, convolve(fpfs, g, boundary = 'extend'), color = 'cyan', label = "Jo
 
 
 #data
-s = np.genfromtxt("w33_g141_espec_083118.txt")
-d = np.genfromtxt("w33_g102_espec_083118.txt")
+s = np.genfromtxt("g141_espec_111018.txt")
+d = np.genfromtxt("g102_espec_111018.txt")
 
 x = np.append(d[:,0], s[:,0])
 y = np.append(d[:,1], s[:,1])
@@ -206,8 +206,8 @@ err = np.append(d[:,2], s[:,2])
 
 rprs = 0.103
 
-off1best = -150.e-6
-off2best = 70.e-6
+off1best = 0. #-150.e-6
+off2best = 0. #70.e-6
 
 plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100, label = "G102 data")
 plt.errorbar(s[:,0], s[:,1] - off2best, s[:,2], fmt = 'xk', zorder=100, label="G141 data (Kreidberg)")

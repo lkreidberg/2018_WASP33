@@ -97,7 +97,7 @@ plt.figure(figsize = (12,6))
 s = np.genfromtxt("w33_data_haynes.txt")
 #plt.errorbar(s[:,0], s[:,1]/100., s[:,2]/100., fmt = 'ow', markersize = 4, ecolor = 'k', markeredgecolor = 'k', markeredgewidth = 1., linewidth = 1., linestyle='none', zorder=100, label="G141 data (Haynes)")
 
-s = np.genfromtxt("w33_g141_espec_083118.txt")
+s = np.genfromtxt("w33_g141_espec_091018.txt")
 d = np.genfromtxt("w33_g102_espec_083118.txt")
 
 
@@ -112,8 +112,8 @@ xm, ym, Tbest, off1best, off2best, chi2  = best_fit_bb(x, y, err, rprs)
 print "best fit T, chi2", Tbest, chi2
 #plt.plot(xm, ym, color='0.5',  label = 'blackbody fit', alpha = 0.5, linestyle='dotted', zorder = 0.5)
 
-off1best = -150.e-6
-off2best = 70.e-6
+off1best = 0.
+off2best = 0.
 
 #plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.b', zorder=100, label = "G102 data")
 #plt.errorbar(s[:,0], s[:,1] - off2best, s[:,2], marker='.', color='r', linestyle='none', zorder=100, label="G141 data (Kreidberg)")
@@ -125,8 +125,10 @@ plt.errorbar(s[:,0], s[:,1] - off2best, s[:,2], marker='.', color='k', linestyle
 d = np.genfromtxt("SE-W33b-TiO-NoDrag-AllK-RpoRs-0.1055.dat", skip_header = 1, delimiter = ',')
 #plt.plot(d[:,1], d[:,2]*0.95316816783, label = 'GCM', color = '0.1')       #multiplied by correction factor for rp/rs (Vivien assuemd 0.1055)
 
-plt.ylim(0.0, 1.8e-3)
-plt.xlim(0.75, 1.7)
+#plt.ylim(0.0, 1.8e-3)
+#plt.xlim(0.75, 1.7)
+plt.ylim(0.0, 4.8e-3)
+plt.xlim(0.75, 5.7)
 
 
 #plt.gca().annotate('TiO features', xy=(1.05, 0.0008), xytext=(0.8, 0.0005), arrowprops=dict(facecolor='black', shrink=0.05),)
@@ -136,10 +138,10 @@ plt.xlim(0.75, 1.7)
 g = Gaussian1DKernel(stddev=50)
 offset = 0.0000
 
-d = np.genfromtxt("wasp33b_rfacv1.0_m0.0_co1.0nc.flx")
+d = np.genfromtxt("wasp33b_from_Caroline/wasp33b_rfacv1.0_m0.0_co1.0nc.flx")
 plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "forward model, rfacv1.0_m0.0")
 
-d = np.genfromtxt("wasp33b_rfacv0.85_m0.0_co1.0nc.flx")
+d = np.genfromtxt("wasp33b_from_Caroline/wasp33b_rfacv0.85_m0.0_co1.0nc.flx")
 plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "forward model, rfacv0.85_m0.0")
 
 #d = np.genfromtxt("wasp33b_m0.0_co1.0nc.spec")
@@ -148,6 +150,9 @@ plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset, label = "for
 #d = np.genfromtxt("wasp33b_m0.0_co1.0nc_noTiO.spec")
 #plt.plot(d[:,0], convolve(d[:,1], g, boundary = 'extend') + offset,  label = "forward model, no TiO")
 
+
+plt.errorbar(4.5, 4250e-6, 160e-6, fmt = 'xk')
+plt.errorbar(3.6, 3506e-6, 173e-6, fmt = 'xk')
 
 plt.tight_layout()
 plt.xlabel("Wavelength (microns)")
