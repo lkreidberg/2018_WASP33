@@ -116,12 +116,13 @@ off1best = -150.e-6
 off2best = 70.e-6
 
 
-
+offset = 0.00015
+print "adding offset to Vivien GCM"
 d = np.genfromtxt("SE-W33b-TiO-NoDrag-AllK-RpoRs-0.1055.dat", skip_header = 1, delimiter = ',')
-plt.plot(d[:,1], d[:,2]*0.95316816783, label = 'Vivien GCM', color = '0.5', linestyle = 'dotted')       #multiplied by correction factor for rp/rs (Vivien assuemd 0.1055)
+plt.plot(d[:,1], d[:,2]*0.95316816783 + offset, label = 'Vivien GCM', color = '0.5', linestyle = 'dotted')       #multiplied by correction factor for rp/rs (Vivien assuemd 0.1055)
 
-plt.ylim(0.0, 2.0e-3)
-plt.xlim(0.75, 1.7)
+plt.ylim(0.0, 5.0e-3)
+plt.xlim(0.75, 5)
 
 
 #plt.gca().annotate('TiO features', xy=(1.05, 0.0008), xytext=(0.8, 0.0005), arrowprops=dict(facecolor='black', shrink=0.05),)
@@ -212,9 +213,12 @@ off2best = 0. #70.e-6
 plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100, label = "G102 data")
 plt.errorbar(s[:,0], s[:,1] - off2best, s[:,2], fmt = 'xk', zorder=100, label="G141 data (Kreidberg)")
 
+print "mean G141", np.mean(s[:,1])
 #plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100)#, label = "G102 data")
 
 
+plt.errorbar(4.5, 0.004250, xerr = 0.5, yerr = 160./1e6, color = '0.2')
+plt.errorbar(3.6, 0.003506, xerr = 0.5, yerr = 173./1e6, color = '0.2')
 
 plt.xlabel("Wavelength (microns)")
 plt.ylabel("Planet-to-star flux")
@@ -222,4 +226,4 @@ plt.legend(loc = "lower right", frameon=True, fontsize=10)
 
 plt.tight_layout()
 plt.savefig("model_comparison.pdf")
-#plt.show() 
+plt.show() 
