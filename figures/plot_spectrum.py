@@ -56,7 +56,7 @@ def best_fit_bb(w, y, e, rprs):
     star = np.genfromtxt("W33b_star_NEXTGEN_B.dat")       #W/m2/micron (column 1)
     #star_bb = np.interp(w, star[:,0], convolve(star[:,1]*22423.,g, boundary = 'extend'))
     star_bb = bin_at_obs_res(w, star[:,0], star[:,1])*7.316156e9
-    print "arbitrary rescaling of stellar spectrum!!!!"
+    print("arbitrary rescaling of stellar spectrum!!!!")
     model = blackbody(w*1.0e-6, 7400.)
 
     chis = []
@@ -72,7 +72,7 @@ def best_fit_bb(w, y, e, rprs):
                 chis.append(chi2)
                 if chi2 < chibest: 
                     chibest, Tbest, off1best, off2best, resid = chi2, T, off1, off2, (y - model)/e
-                    print  chibest, Tbest, off1best, off2best 
+                    print(chibest, Tbest, off1best, off2best)
 
     waves_hires = np.linspace(0.7, 5.0, 100)
     star_bb_hires = bin_at_obs_res(waves_hires, star[:,0], star[:,1])*7.316156e9
@@ -109,7 +109,7 @@ err = np.append(d[:,2], s[:,2])
 rprs = 0.103
 
 xm, ym, Tbest, off1best, off2best, chi2  = best_fit_bb(x, y, err, rprs)
-print "best fit T, chi2", Tbest, chi2
+print("best fit T, chi2", Tbest, chi2)
 #plt.plot(xm, ym, color='0.5',  label = 'blackbody fit', alpha = 0.5, linestyle='dotted', zorder = 0.5)
 
 off1best = 0.

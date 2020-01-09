@@ -42,10 +42,10 @@ def blackbody(l,T):
 
 def best_fit_bb(w, y, e, rprs):
     Ts = np.linspace(3140, 3170, 50)
-    #off1s = np.linspace(-20, 0, 50)/1.e6
-    #off2s = np.linspace(130, 150, 50)/1.e6
-    off1s = np.linspace(-200, 200, 2)/1.e8
-    off2s = np.linspace(-200, 200, 2)/1.e8
+    off1s = np.linspace(-20, 0, 50)/1.e6
+    off2s = np.linspace(130, 150, 50)/1.e6
+    #off1s = np.linspace(-200, 200, 2)/1.e8
+    #off2s = np.linspace(-200, 200, 2)/1.e8
     chibest = 10000.
     Tbest = 0.  
     resid = 0.
@@ -56,7 +56,7 @@ def best_fit_bb(w, y, e, rprs):
     star = np.genfromtxt("W33b_star_NEXTGEN_B.dat")       #W/m2/micron (column 1)
     #star_bb = np.interp(w, star[:,0], convolve(star[:,1]*22423.,g, boundary = 'extend'))
     star_bb = bin_at_obs_res(w, star[:,0], star[:,1])*7.316156e9
-    print "arbitrary rescaling of stellar spectrum!!!!"
+    print("arbitrary rescaling of stellar spectrum!!!!")
     model = blackbody(w*1.0e-6, 7400.)
 
     chis = []
@@ -72,7 +72,7 @@ def best_fit_bb(w, y, e, rprs):
                 chis.append(chi2)
                 if chi2 < chibest: 
                     chibest, Tbest, off1best, off2best, resid = chi2, T, off1, off2, (y - model)/e
-                    print  chibest, Tbest, off1best, off2best 
+                    print(chibest, Tbest, off1best, off2best)
 
     waves_hires = np.linspace(0.7, 5.0, 100)
     star_bb_hires = bin_at_obs_res(waves_hires, star[:,0], star[:,1])*7.316156e9
@@ -109,7 +109,7 @@ err = np.append(d[:,2], s[:,2])
 rprs = 0.103
 
 xm, ym, Tbest, off1best, off2best, chi2  = best_fit_bb(x, y, err, rprs)
-print "best fit T, chi2", Tbest, chi2
+print("best fit T, chi2", Tbest, chi2)
 #plt.plot(xm, ym, color='0.5',  label = 'blackbody fit', alpha = 0.5, linestyle='dotted', zorder = 0.5)
 
 off1best = -150.e-6
@@ -117,7 +117,7 @@ off2best = 70.e-6
 
 
 offset = 0.00015
-print "adding offset to Vivien GCM"
+print("adding offset to Vivien GCM")
 d = np.genfromtxt("SE-W33b-TiO-NoDrag-AllK-RpoRs-0.1055.dat", skip_header = 1, delimiter = ',')
 plt.plot(d[:,1], d[:,2]*0.95316816783 + offset, label = 'Vivien GCM', color = '0.5', linestyle = 'dotted')       #multiplied by correction factor for rp/rs (Vivien assuemd 0.1055)
 
@@ -213,7 +213,7 @@ off2best = 0. #70.e-6
 plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100, label = "G102 data")
 plt.errorbar(s[:,0], s[:,1] - off2best, s[:,2], fmt = 'xk', zorder=100, label="G141 data (Kreidberg)")
 
-print "mean G141", np.mean(s[:,1])
+print("mean G141", np.mean(s[:,1]))
 #plt.errorbar(d[:,0], d[:,1] - off1best, d[:,2], fmt = '.k', zorder=100)#, label = "G102 data")
 
 
